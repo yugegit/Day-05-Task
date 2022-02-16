@@ -1,0 +1,403 @@
+
+
+
+A. Print odd numbers in an array :
+
+let arr=[1,2,3,4,5,6];
+var res=[];
+function odds(arr){
+    for(let i=0;i<arr.length;i++){
+        if(arr[i]%2!==0){
+            console.log(arr[i])
+        }
+        
+        
+    }
+    
+}    
+odd(arr)
+
+
+  
+Sum of all numbers in an array :
+    
+    var input = [4, 8, 7, 13, 12]
+    var sum = 0;
+
+  var sumOfNums = function(){
+
+   
+
+    for (let i = 0; i < input.length; i++) {
+
+        sum += input[i];
+
+    }
+
+   }
+
+   
+
+   sumOfNums();
+
+   console.log(sum)
+
+Convert all the strings to title caps in a string array
+
+var str = 'hello this is guvi'
+
+function upper () {
+  
+   
+  str = str.toLowerCase().split(' ');
+  
+  for (var i = 0; i < str.length; i++) {
+    
+    str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1); 
+  }
+  
+  return str.join(' ');
+}
+
+console.log(upper())
+
+
+
+Return all the prime numbers in an array :
+
+var arr = [1,2,5,9,11,3,7,22, 56, 3, 56, 4, 343, 68, 56, 34, 87, 8, 45, 34];
+var checkprime = function(n){
+    if(n===1){
+        return false;
+    }else if(n===2){
+        return true;
+    }else {
+        for(let x = 2; x < n; x++){
+
+            if(x % n===0){
+                return false;
+            }
+
+        }
+        return true;
+    }
+}
+var filterprime = function(arr){
+    let filter =[];
+    for(let i = 0;i<arr.length;i++ ){
+        if(!checkprime(arr[i])){
+            Push.filter(arr[i]);
+        }
+    }
+    return filter;
+}
+console.log(filterprime(arr));
+
+
+Return all the palindromes in an array :
+
+var arr = ['carecar', 1344, 12321, 'did', 'cannot'];
+
+var isPalindrome = function(el) {
+
+   const str = String(el);
+
+   let i = 0;
+
+   let j = str.length - 1;
+
+   while(i < j) {
+
+      if(str[i] === str[j]) {
+
+         i++;
+
+         j--;
+
+      }
+
+      else {
+
+         return false;
+
+      }
+
+   }
+
+   return true;
+
+};
+
+var result=[];
+
+var findPalindrome = function(arr) {
+
+	for(let i=0;i<arr.length;i++){
+
+  	if(isPalindrome(arr[i])){
+
+    	result.push(arr[i]);
+
+    }
+
+  }
+
+}
+
+findPalindrome(arr);
+
+console.log(result);
+
+
+Return median of two sorted arrays of the same size :
+
+function getMedian(ar1, ar2, n)
+
+{
+
+	var i = 0; 
+
+	var j = 0; 
+
+	var count;
+
+	var m1 = -1, m2 = -1;
+
+
+
+	for (count = 0; count <= n; count++)
+
+	{
+
+		if (i == n)
+
+		{
+
+			m1 = m2;
+
+			m2 = ar2[0];
+
+			break;
+
+		}
+
+		else if (j == n)
+
+		{
+
+			m1 = m2;
+
+			m2 = ar1[0];
+
+			break;
+
+		}
+
+		if (ar1[i] <= ar2[j])
+
+		{
+
+			m1 = m2;
+
+			m2 = ar1[i];
+
+			i++;
+
+		}
+
+		else
+
+		{
+
+			m1 = m2;
+
+			m2 = ar2[j];
+
+			j++;
+
+		}
+
+	}
+
+
+
+	return (m1 + m2)/2;
+
+}
+
+
+var input1 = [1, 12, 15, 26, 38];
+
+var input2 = [2, 13, 17, 30, 45];
+
+var n1 = input1.length;
+
+var n2 = input2.length;
+
+if (n1 == n2){
+
+	console.log("Median is "+ getMedian(input1, input2, n1));
+
+  }
+
+else{
+
+	console.log("Doesn't work for arrays of unequal size");
+
+}
+
+
+Remove duplicates from an array :
+
+getUniqueArray=function(arr){
+
+    
+
+    let uniqueArr = [];
+
+    
+
+    
+
+    for(let i of arr) {
+
+        if(uniqueArr.indexOf(i) === -1) {
+
+            uniqueArr.push(i);
+
+        }
+
+    }
+
+    console.log(uniqueArr);
+
+}
+
+
+
+var array = [1, 2, 3, 2, 3];
+
+
+
+getUniqueArray(array);
+
+
+Rotate an array by k times :
+
+var result = [];
+
+rotateArray = function(a, n, k)
+
+{
+
+
+
+	k = k % n;
+
+
+
+	for (let i = 0; i < n; i++) {
+
+		if (i < k) {
+
+
+
+			result.push(a[n + i - k] );
+
+		}
+
+		else {
+
+
+
+			result.push(a[i - k]);
+
+		}
+
+	}
+
+}
+
+
+
+let input = [1, 2, 3, 4, 5];
+
+let N = input.length;
+
+let K = 3;
+
+
+
+rotateArray(input, N, K);
+
+console.log(result)
+
+
+
+
+Do the below programs in arrow functions :
+
+Print odd numbers in an array :
+
+let arr = [ 1,2,3,4,5,6,7,8,9];
+let odd = arr.filter(n => n%2)
+    console.log(arr);
+
+Convert all the strings to title caps in a string array :
+
+
+var sentence = 'hello this is guvi';
+var upperString = (str) => str[0].toUpperCase() + str.slice(1).toLowerCase()
+
+var upperWords = (str) => str.split(' ').map(upperString).join(' ');
+console.log(upperWords(sentence));
+
+Sum of all numbers in an array :
+
+const array =  [4, 8, 7, 13, 12]
+const sumofnums = (a,b,c,d) => a + b + c + d
+console.log(sumofnums(4,8,7,13,12))
+
+
+Return all the prime numbers in an array :
+
+
+       let checkprime = (n) => {
+
+    if (n===2){
+        return true;
+    }
+    if  (n<10){
+        return false;
+    }
+    for ( let i=3;i<=n-1;i++){
+        if(n%1===0){
+            return false;
+        }
+    }
+    return true;
+}
+
+   for (let i=0;i<30;i++){
+       if(checkprime(i)){
+           console.log(i);
+       }
+   }
+
+
+Return all the palindromes in an array :
+
+const str = 'anna';
+const checkpalindrome = (instr) => {
+    for (let i=0;i<instr.length;i+=1){
+        if(instr[i] !== instr[instr.length -1-i]){
+            return false;
+        }
+    }
+return true;
+}
+console.log(checkpalindrome(str));
+
+    
+    
+                                                                                
